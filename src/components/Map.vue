@@ -28,7 +28,7 @@ const temColors = [
 const colors = chroma.scale(temColors).domain([98, 103, 108, 113, 118, 123, 128, 133, 138, 143, 148, 153, 158, 163, 168]);
 
 export default {
-  name: 'HelloWorld',
+  name: 'Map',
   data () {
     return {
       map: {},
@@ -37,11 +37,7 @@ export default {
       image: null
     }
   },
-  props: {
-    msg: String
-  },
   mounted () {
-    
     this.canvasLayer = new ImageLayer({opacity: 0.7});
     var map = new Map({
       target: this.$refs.olmap,
@@ -58,7 +54,6 @@ export default {
     this.map = map;
     this.images2Canvas();
     this.image.src = '/images/icon_teplota_2_m_20200728_03.jpg';
-    
   },
   methods: {
     getBaseLayers () {
@@ -146,8 +141,6 @@ export default {
           }
           return can;
     }
-
-
 
   }
 
