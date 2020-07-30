@@ -114,8 +114,7 @@ export default {
         self.canvasLayer.setSource(new ImageCanvasSource({
           canvasFunction : self.canvasFunction,
           ratio : 1,
-          projection : MERCATOR,
-          imageSmoothing : true
+          projection : MERCATOR
         }))
 
       }
@@ -133,7 +132,7 @@ export default {
           
           for (var j = 0; j <= height; j += dx) {
             for (var i = 0; i <= width; i += dx ) {
-              var coord = new toLonLat(this.map.getCoordinateFromPixel([i/pixelRatio, j/pixelRatio]), projection);
+              var coord = toLonLat(this.map.getCoordinateFromPixel([i/pixelRatio, j/pixelRatio]), projection);
               var value = this.imageArray.getValue(coord[0],coord[1]);
               ctx.fillStyle = colors(value).css();
               ctx.fillRect(i-halfdx,j-halfdx,dx,dx)
