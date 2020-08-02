@@ -53,7 +53,7 @@ export default {
     });
     this.map = map;
     this.images2Canvas();
-    this.image.src = '/images/icon_teplota_2_m_20200728_03.jpg';
+    this.image.src = 'images/icon_teplota_2_m_20200728_03.jpg';
   },
   methods: {
     getBaseLayers () {
